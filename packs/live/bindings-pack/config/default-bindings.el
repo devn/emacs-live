@@ -103,10 +103,11 @@
 (global-set-key (kbd "M-]") 'kill-ring-save)
 
 ;; paste
-(global-set-key (kbd "M-v")  'yank)
+;; (global-set-key (kbd "M-v")  'yank)
 
 ;; undo
-(global-set-key (kbd "C-M-_") 'undo-tree-undo)
+;; (global-set-key (kbd "C-M-_") 'undo-tree-undo) ; default
+(global-set-key (kbd "C-M--") 'undo-tree-undo)
 
 ;;mark current function
 (global-set-key (kbd "C-x C-p")  'mark-defun)
@@ -136,7 +137,7 @@
 (global-set-key (kbd "C-SPC") 'set-mark-command)
 
 ;;repeat previous command
-(global-set-key (kbd "C-v") 'repeat)
+;; (global-set-key (kbd "C-v") 'repeat)
 
 ;;scroll other window
 (global-set-key (kbd "C-M-]") 'scroll-other-window)
