@@ -172,29 +172,14 @@
   (nth (random (length live-welcome-messages)) live-welcome-messages))
 
 (when live-supported-emacsp
-  (setq initial-scratch-message (concat ";;
-;;     MM\"\"\"\"\"\"\"\"`M
-;;     MM  mmmmmmmM
-;;     M`      MMMM 88d8b.d8b. .d8888b. .d8888b. .d8888b.
-;;     MM  MMMMMMMM 88''88'`88 88'  `88 88'  `\"\" Y8ooooo.
-;;     MM  MMMMMMMM 88  88  88 88.  .88 88.  ...       88
-;;     MM        .M dP  dP  dP `88888P8 '88888P' '88888P'
-;;     MMMMMMMMMMMM
-;;
-;;         M\"\"MMMMMMMM M\"\"M M\"\"MMMMM\"\"M MM\"\"\"\"\"\"\"\"`M
-;;         M  MMMMMMMM M  M M  MMMMM  M MM  mmmmmmmM
-;;         M  MMMMMMMM M  M M  MMMMP  M M`      MMMM
-;;         M  MMMMMMMM M  M M  MMMM' .M MM  MMMMMMMM
-;;         M  MMMMMMMM M  M M  MMP' .MM MM  MMMMMMMM
-;;         M         M M  M M     .dMMM MM        .M
-;;         MMMMMMMMMMM MMMM MMMMMMMMMMM MMMMMMMMMMMM  Version " live-version
-                                                                (if live-safe-modep
+  (setq initial-scratch-message (concat ";; Emacs Live - Version " live-version
+                                        (if live-safe-modep
                                                                     "
 ;;                                                     --*SAFE MODE*--"
                                                                   "
 ;;"
                                                                   ) "
-;;           http://github.com/overtone/emacs-live
+;; http://github.com/overtone/emacs-live
 ;;
 ;; "                                                      (live-welcome-message) "
 
