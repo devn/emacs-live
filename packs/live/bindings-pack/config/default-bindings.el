@@ -85,7 +85,8 @@
 (define-key paredit-mode-map (kbd "C-M-j") 'live-paredit-forward-slurp-sexp-neatly)
 (define-key paredit-mode-map (kbd "C-M-y") 'paredit-forward-barf-sexp)
 (define-key paredit-mode-map (kbd "C-M-z") 'align-cljlet)
-(define-key paredit-mode-map (kbd "M-s") 'paredit-split-sexp)
+(define-key paredit-mode-map (kbd "M-s") 'paredit-splice-sexp)
+;; (define-key paredit-mode-map (kbd "M-s") 'paredit-split-sexp) ; Make the bad man stop.
 (define-key paredit-mode-map (kbd "M-j") 'paredit-join-sexps)
 (define-key paredit-mode-map (kbd "M-P") 'live-paredit-previous-top-level-form)
 (define-key paredit-mode-map (kbd "M-N") 'live-paredit-next-top-level-form)
@@ -103,7 +104,8 @@
 (global-set-key (kbd "M-]") 'kill-ring-save)
 
 ;; paste
-;; (global-set-key (kbd "M-v")  'yank)
+(global-set-key (kbd "M-v") 'yank)
+(global-set-key (kbd "C-y") 'yank)
 
 ;; undo
 ;; (global-set-key (kbd "C-M-_") 'undo-tree-undo) ; default
@@ -116,16 +118,17 @@
 (global-set-key (kbd "M-SPC ")   'live-delete-whitespace-except-one)
 
 ;;make ^h delete rather than help
-(global-set-key (kbd "C-h") 'delete-backward-char)
-(define-key paredit-mode-map (kbd "C-h") 'paredit-backward-delete)
+;; (global-set-key (kbd "C-h") 'delete-backward-char)
+;; (define-key paredit-mode-map (kbd "C-h") 'paredit-backward-delete)
 
 ;;redefine help shortcut
-(global-set-key (kbd "M-h") 'help-command)
+;; (global-set-key (kbd "M-h") 'help-command) ; no, don't do this.
+(global-set-key (kbd "C-h") 'help-command)
 
 ;;allow the deletion of words:
 ;;backward kill word (forward kill word is M-d)
-(global-set-key (kbd "C-w") 'backward-kill-word)
-(define-key paredit-mode-map (kbd "C-w") 'paredit-backward-kill-word)
+;; (global-set-key (kbd "C-w") 'backward-kill-word)
+;; (define-key paredit-mode-map (kbd "C-w") 'paredit-backward-kill-word)
 
 ;;kill line backwards
 (global-set-key (kbd "M-k") 'live-backwards-kill-line)
@@ -158,7 +161,8 @@
 (global-set-key (kbd "C-x \\") 'align-regexp)
 
 ;; comment region
-(global-set-key (kbd "M-/") 'comment-or-uncomment-region)
+;; (global-set-key (kbd "M-/") 'comment-or-uncomment-region)
+(global-set-key (kbd "M-/") 'hippie-expand)
 
 (global-set-key (kbd "C-s") 'isearch-forward)
 (global-set-key (kbd "C-r") 'isearch-backward)
